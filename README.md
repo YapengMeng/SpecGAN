@@ -32,7 +32,7 @@ pip install GDAL-3.4.2-cp37-cp37m-win_amd64.whl
 Install MMCV with [MIM](https://github.com/open-mmlab/mim).
 
 ```shell
-pip3 install openmim
+pip install openmim
 mim install mmcv-full==1.3.11
 ```
 Please use our provide`SpecGAN/photometric.py` to replace `yourcondaroot/Anaconda3/envs/SpecGAN/Lib/site-packages/mmcv/image/photometric.py` to support muti-channel image processing.
@@ -40,7 +40,7 @@ Please use our provide`SpecGAN/photometric.py` to replace `yourcondaroot/Anacond
 **Step 4.**
 Install our modified `mmediting`. 
 ```shell
-pip3 install -e .
+pip install -e .
 ```
 
 ## Train
