@@ -60,6 +60,25 @@ It needs a really long training time, about 14 days on a GTX 1080Ti graphic card
 python tools/test.py configs/SpecGAN_32x_sr.py work_dirs/xxx.pth --save-path xxx
 ```
 ## Pretrained model and dataset
+Your dataset should be arranged as follows:
+```angular2html
+--data_root_path
+    --train
+        --RGBHR
+            --1.tif
+            --2.tif
+            --...
+        --HSI
+            --1.tif
+            --2.tif
+            --...
+    --valid
+        ...
+    --test
+        ...
+```
+The HSI input image should be resized to the same size as low resolution RGB image.
+We concat the two input as `[HSI;RGBLR]`, which has 48 channels and 3 channels, respectively.
 
 ## Citation
 

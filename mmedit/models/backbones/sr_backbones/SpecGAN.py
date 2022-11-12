@@ -219,7 +219,6 @@ class RDB_Conv(nn.Module):
 
     def forward(self, x):
         out = self.conv(x)
-        # 注意这里的输出，是用输入叠加（cat）输出的形式
         return torch.cat((x, out), 1)
 
 
@@ -235,7 +234,7 @@ class RDB_Block(nn.Module):
             convs.append(RDB_Conv(G0 + c * G, G, kSize))
         self.convs = nn.Sequential(*convs)
 
-        # Local Feature Fusion 这里给每个像素点执行线性融合
+        # Local Feature Fusion
         self.LFF = nn.Conv2d(G0 + C * G, G0, 1, padding=0, stride=1)
 
     def forward(self, x):
@@ -251,8 +250,6 @@ class RDB_branch(nn.Module):
         C = nConvLayers
         self.D = num_RDB_block
 
-        # self.conv_first = nn.Conv2d(in_channels, G0, 3, 1, 1)
-
         # Redidual dense blocks and dense feature fusion RDB
         self.RDBs = nn.ModuleList()
         for i in range(self.D):
@@ -265,7 +262,6 @@ class RDB_branch(nn.Module):
         ])
 
     def forward(self, x, detail=False):
-        # x_in = self.conv_first(x)
         x_in = x.clone()
         RDBs_out = []
         for i in range(self.D):
@@ -289,7 +285,6 @@ class SimilarAttn(nn.Module):
         self.query_conv = nn.Conv2d(in_channels=in_dim, out_channels=mid_dim, kernel_size=1)
         self.key_conv = nn.Conv2d(in_channels=in_dim, out_channels=mid_dim, kernel_size=1)
         self.value_conv = nn.Conv2d(in_channels=in_dim, out_channels=in_dim, kernel_size=1)
-        # self.gamma = nn.Conv2d(in_channels=in_dim, out_channels=in_dim, kernel_size=1)
         self.softmax = nn.Softmax(dim=-1)
 
     def forward(self, reference, x):
@@ -297,20 +292,17 @@ class SimilarAttn(nn.Module):
         inputs :
             x : input feature maps(B X C X W X H)
         returns :
-            out : self attention value + input feature
+            out : self attention value
             attention: B X N X N (N is Width*Height)
         """
         m_batchsize, num_channel, width, height = reference.shape
         proj_query = self.query_conv(reference).view(m_batchsize, -1, width * height).permute(0, 2, 1)  # B X N X C
         proj_key = self.key_conv(reference).view(m_batchsize, -1, width * height)  # B X C x N
-        energy = torch.bmm(proj_query, proj_key)  # transpose check 矩阵维度为3的乘法
-        attention = self.softmax(energy)  # B X (N) X (N)
-        proj_value = self.value_conv(x).view(m_batchsize, -1, width * height)  # B X C X N
-
-        out = torch.bmm(proj_value, attention.permute(0, 2, 1))  # 注意这里！！
+        energy = torch.bmm(proj_query, proj_key)
+        attention = self.softmax(energy)
+        proj_value = self.value_conv(x).view(m_batchsize, -1, width * height)
+        out = torch.bmm(proj_value, attention.permute(0, 2, 1))
         out = out.view(m_batchsize, num_channel, width, height)
-
-        # out = self.gamma(out) + x
         return out
 
 
