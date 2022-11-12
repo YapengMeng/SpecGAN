@@ -29,3 +29,16 @@ Install gdal (used to load muti-channal HSI images `.tif`)
 ```
 conda install gdal
 ```
+
+## Citation
+
+And our code builds on [MMEditing](https://github.com/open-mmlab/mmediting), please cite as follows:
+
+```bibtex
+@misc{mmediting2022,
+    title = {{MMEditing}: {OpenMMLab} Image and Video Editing Toolbox},
+    author = {{MMEditing Contributors}},
+    howpublished = {\url{https://github.com/open-mmlab/mmediting}},
+    year = {2022}
+}
+```
