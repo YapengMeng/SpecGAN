@@ -46,9 +46,9 @@ pip3 install -e .
 ## Train
 **Step 1.**
 
-Edit config files at `configs/SpecGAN_32x_sr.py` or `configs/SpecGAN_16x_sr.py`.
+Edit config files at `configs/SpecGAN_32x_sr.py` or `configs/SpecGAN_16x_sr.py` to modify `line 87-112` to switch to your dataset path.
 
-Modify `line 87-112` to switch to your dataset path.
+The data set should be place as [here](#pretrained-model-and-dataset)
 
 **Step 2.**
 ```
