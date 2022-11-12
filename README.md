@@ -31,9 +31,16 @@ conda install gdal
 ```
 
 ## Train
-
+**Step 1.**
+Edit config files at `configs/SpecGAN`.
+**Step 2.**
+```
+python tools/train.py configs/SpecGAN/SpecGANx32.py
+```
 ## Evaluate
-
+```
+python tools/test.py configs/SpecGAN/SpecGANx32.py work_dirs/xxx.pth --save-path xxx
+```
 ## Pretrained model and dataset
 
 ## Citation
