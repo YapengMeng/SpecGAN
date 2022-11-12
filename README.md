@@ -30,6 +30,12 @@ Install gdal (used to load muti-channal HSI images `.tif`)
 conda install gdal
 ```
 
+## Train
+
+## Evaluate
+
+## Pretrained model and dataset
+
 ## Citation
 
 And our code builds on [MMEditing](https://github.com/open-mmlab/mmediting), please cite as follows:
