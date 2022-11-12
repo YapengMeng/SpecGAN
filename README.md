@@ -14,9 +14,22 @@ Large-factor image super-resolution is a challenging task due to the high uncert
 SpecGAN builds on [MMEditing](https://github.com/open-mmlab/mmediting) and [MMCV](https://github.com/open-mmlab/mmcv). We make some necessary modifications in order to load hyperspectral images (HSI).
 
 **Step 1.**
+Install Python 3.7.
+
 Install PyTorch following [official instructions](https://pytorch.org/get-started/locally/).
+```shell
+conda create -n SpecGAN python=3.7
+conda activate SpecGAN
+conda install pytorch==1.9.0 torchvision==0.10.0 torchaudio==0.9.0 cudatoolkit=11.1.1 -c pytorch -c conda-forge
+```
 
 **Step 2.**
+download [gdal](https://download.lfd.uci.edu/pythonlibs/archived/cp37/GDAL-3.4.2-cp37-cp37m-win_amd64.whl) wheel.
+```shell
+pip install GDAL-3.4.2-cp37-cp37m-win_amd64.whl
+```
+
+**Step 3.**
 Install MMCV with [MIM](https://github.com/open-mmlab/mim).
 
 ```shell
@@ -24,11 +37,6 @@ pip3 install openmim
 mim install mmcv-full
 ```
 
-**Step 3.**
-Install gdal (used to load muti-channal HSI images `.tif`)
-```
-conda install gdal
-```
 
 ## Train
 **Step 1.**
