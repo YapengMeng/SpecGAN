@@ -11,20 +11,19 @@ Large-factor image super-resolution is a challenging task due to the high uncert
 
 ## Installation
 
-SpecGAN builds on [MMEditing](https://github.com/open-mmlab/mmediting) and [MMCV](https://github.com/open-mmlab/mmcv). We make some necessary modifications in order to load hyperspectral images (HSI).
+SpecGAN builds on [MMEditing](https://github.com/open-mmlab/mmediting) and [MMCV](https://github.com/open-mmlab/mmcv). 
+**We make some necessary modifications in order to load hyperspectral images (HSI).**
 
 **Step 1.**
-Install Python 3.7.
-
-Install PyTorch following [official instructions](https://pytorch.org/get-started/locally/).
+Clone our repository and create conda environment
 ```shell
-conda create -n SpecGAN python=3.7
-conda activate SpecGAN
-conda install pytorch==1.9.0 torchvision==0.10.0 torchaudio==0.9.0 cudatoolkit=11.1.1 -c pytorch -c conda-forge
+conda env create -f environment.yml
 ```
 
 **Step 2.**
-download [gdal](https://download.lfd.uci.edu/pythonlibs/archived/cp37/GDAL-3.4.2-cp37-cp37m-win_amd64.whl) wheel.
+Install `gdal`
+
+If you use Windows and Python 3.7, just download [gdal](https://download.lfd.uci.edu/pythonlibs/archived/cp37/GDAL-3.4.2-cp37-cp37m-win_amd64.whl) wheel.
 ```shell
 pip install GDAL-3.4.2-cp37-cp37m-win_amd64.whl
 ```
@@ -34,20 +33,30 @@ Install MMCV with [MIM](https://github.com/open-mmlab/mim).
 
 ```shell
 pip3 install openmim
-mim install mmcv-full
+mim install mmcv-full==1.3.11
 ```
+Please use our provide`SpecGAN/photometric.py` to replace `yourcondaroot/Anaconda3/envs/SpecGAN/Lib/site-packages/mmcv/image/photometric.py` to support muti-channel image processing.
 
+**Step 4.**
+Install our modified `mmediting`. 
+```shell
+pip3 install -e .
+```
 
 ## Train
 **Step 1.**
-Edit config files at `configs/SpecGAN`.
+Edit config files at `configs/SpecGAN_32x_sr.py` or `configs/SpecGAN_16x_sr.py`.
+
+Modify `line 87-112` to switch to your dataset path.
+
 **Step 2.**
 ```
-python tools/train.py configs/SpecGAN/SpecGANx32.py
+python tools/train.py configs/SpecGAN_32x_sr.py
 ```
+It needs a really long training time, about 14 days on a GTX 1080Ti graphic card.
 ## Evaluate
 ```
-python tools/test.py configs/SpecGAN/SpecGANx32.py work_dirs/xxx.pth --save-path xxx
+python tools/test.py configs/SpecGAN_32x_sr.py work_dirs/xxx.pth --save-path xxx
 ```
 ## Pretrained model and dataset
 
