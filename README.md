@@ -51,13 +51,25 @@ Edit config files at `configs/SpecGAN_32x_sr.py` or `configs/SpecGAN_16x_sr.py` 
 The data set should be place as [here](#pretrained-model-and-dataset).
 
 **Step 2.**
+
+x32 super-resolution:
 ```
 python tools/train.py configs/SpecGAN_32x_sr.py
 ```
+x16 super-resolution:
+```
+python tools/train.py configs/SpecGAN_16x_sr.py
+```
 It needs a really long training time, about 14 days on a GTX 1080Ti graphic card.
 ## Evaluate
+
+x32 super-resolution:
 ```
 python tools/test.py configs/SpecGAN_32x_sr.py work_dirs/xxx.pth --save-path xxx
+```
+x16 super-resolution:
+```
+python tools/test.py configs/SpecGAN_16x_sr.py work_dirs/xxx.pth --save-path xxx
 ```
 ## Pretrained model and dataset
 Your dataset should be arranged as follows:
