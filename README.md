@@ -91,6 +91,8 @@ The dataset should be arranged as follows:
     --test
         ...
 ```
+Our paper uses dataset from the [IEEE data fusion contest 2019](https://dx.doi.org/10.21227/c6tm-vw12)
+
 The HSI input image should be resized to the same size as low resolution RGB image.
 We concat the two input as `[HSI;RGBLR]`, which has 48 channels and 3 channels, respectively.
 
