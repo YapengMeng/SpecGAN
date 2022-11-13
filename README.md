@@ -72,7 +72,9 @@ x16 super-resolution:
 python tools/test.py configs/SpecGAN_16x_sr.py work_dirs/xxx.pth --save-path xxx
 ```
 ## Pretrained model and dataset
-Your dataset should be arranged as follows:
+Our pre-trained models can be download from [Google Drive]() or [百度网盘](https://pan.baidu.com/s/1QQruAOTB3IL5Kuo87GVgAA?pwd=gep7)
+
+The dataset should be arranged as follows:
 ```angular2html
 --data_root_path
     --train
