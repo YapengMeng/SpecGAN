@@ -72,7 +72,7 @@ x16 super-resolution:
 python tools/test.py configs/SpecGAN_16x_sr.py work_dirs/xxx.pth --save-path xxx
 ```
 ## Pretrained model and dataset
-Our pre-trained models can be download from [Google Drive]() or [百度网盘](https://pan.baidu.com/s/1QQruAOTB3IL5Kuo87GVgAA?pwd=gep7)
+Our pre-trained models can be download from [Google Drive](https://drive.google.com/drive/folders/1Tm4r5U1PKuvm9NV5QouFsrL7pR6Lrco_?usp=share_link) or [百度网盘](https://pan.baidu.com/s/1QQruAOTB3IL5Kuo87GVgAA?pwd=gep7).
 
 The dataset should be arranged as follows:
 ```angular2html
@@ -91,7 +91,7 @@ The dataset should be arranged as follows:
     --test
         ...
 ```
-Our paper uses dataset from the [IEEE data fusion contest 2019](https://dx.doi.org/10.21227/c6tm-vw12)
+Our paper uses dataset from the [IEEE data fusion contest 2019](https://dx.doi.org/10.21227/c6tm-vw12).
 
 The HSI input image should be resized to the same size as low resolution RGB image.
 We concat the two input as `[HSI;RGBLR]`, which has 48 channels and 3 channels, respectively.
