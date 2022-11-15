@@ -1,6 +1,8 @@
 # SpecGAN: Large-factor Super-resolution of Remote Sensing Images
 Yapeng Meng, Wenyuan Li, Sen Lei, Zhengxia Zou, and Zhenwei Shi*
 
+[![IEEE](https://ieeexplore.ieee.org/assets/img/ieee_logo_white.svg)](https://ieeexplore.ieee.org/document/9950553)
+
 The official PyTorch implementation of SpecGAN, Large-factor Super-resolution of Remote Sensing Images with Spectra-guided Generative Adversarial Networks, accepted by IEEE Transactions on Geoscience and Remote Sensing（TGRS).
 
 ## Abstract
@@ -97,6 +99,18 @@ The HSI input image should be resized to the same size as low resolution RGB ima
 We concat the two input as `[HSI;RGBLR]`, which has 48 channels and 3 channels, respectively.
 
 ## Citation
+If our research is helpful to your research, please cite it as below.
+```bibtex
+@ARTICLE{9950553,
+  author={Meng, Yapeng and Li, Wenyuan and Lei, Sen and Zou, Zhengxia and Shi, Zhenwei},
+  journal={IEEE Transactions on Geoscience and Remote Sensing}, 
+  title={Large-factor Super-resolution of Remote Sensing Images with Spectra-guided Generative Adversarial Networks}, 
+  year={2022},
+  volume={},
+  number={},
+  pages={1-1},
+  doi={10.1109/TGRS.2022.3222360}}
+```
 
 And our code builds on [MMEditing](https://github.com/open-mmlab/mmediting), please cite as follows:
 
