@@ -1,7 +1,7 @@
 # SpecGAN: Large-factor Super-resolution of Remote Sensing Images
 Yapeng Meng, Wenyuan Li, Sen Lei, Zhengxia Zou, and Zhenwei Shi*
 
-[![IEEE](https://ieeexplore.ieee.org/assets/img/ieee_logo_white.svg)](https://ieeexplore.ieee.org/document/9950553)
+[![IEEE](https://img.shields.io/badge/IEEE-Early%20Access-blue)](https://ieeexplore.ieee.org/document/9950553)
 
 The official PyTorch implementation of SpecGAN, Large-factor Super-resolution of Remote Sensing Images with Spectra-guided Generative Adversarial Networks, accepted by IEEE Transactions on Geoscience and Remote Sensing（TGRS).
 
