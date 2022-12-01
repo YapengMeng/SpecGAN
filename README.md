@@ -1,7 +1,7 @@
 # SpecGAN: Large-factor Super-resolution of Remote Sensing Images
 Yapeng Meng, Wenyuan Li, Sen Lei, Zhengxia Zou, and Zhenwei Shi*
 
-[![IEEE](https://img.shields.io/badge/IEEE-Early%20Access-blue)](https://ieeexplore.ieee.org/document/9950553)
+[![IEEE](https://img.shields.io/badge/IEEE-Xplore-blue)](https://ieeexplore.ieee.org/document/9950553)
 
 The official PyTorch implementation of SpecGAN, Large-factor Super-resolution of Remote Sensing Images with Spectra-guided Generative Adversarial Networks, accepted by IEEE Transactions on Geoscience and Remote Sensing（TGRS).
 
@@ -104,21 +104,11 @@ If our research is helpful to your research, please cite it as below.
 @ARTICLE{9950553,
   author={Meng, Yapeng and Li, Wenyuan and Lei, Sen and Zou, Zhengxia and Shi, Zhenwei},
   journal={IEEE Transactions on Geoscience and Remote Sensing}, 
-  title={Large-factor Super-resolution of Remote Sensing Images with Spectra-guided Generative Adversarial Networks}, 
+  title={Large-Factor Super-Resolution of Remote Sensing Images With Spectra-Guided Generative Adversarial Networks}, 
   year={2022},
-  volume={},
+  volume={60},
   number={},
-  pages={1-1},
+  pages={1-11},
   doi={10.1109/TGRS.2022.3222360}}
 ```
 
-And our code builds on [MMEditing](https://github.com/open-mmlab/mmediting), please cite as follows:
-
-```bibtex
-@misc{mmediting2022,
-    title = {{MMEditing}: {OpenMMLab} Image and Video Editing Toolbox},
-    author = {{MMEditing Contributors}},
-    howpublished = {\url{https://github.com/open-mmlab/mmediting}},
-    year = {2022}
-}
-```
